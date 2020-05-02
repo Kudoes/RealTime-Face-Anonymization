@@ -1,4 +1,4 @@
-# RealTime-Face-Blurring
+# Real-Time Face Detection and Blurring
 Utilize OpenCV's DNN to detect faces in real-time and then blur them.
 
 Final Project for CS 445 @ UIUC.
