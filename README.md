@@ -10,3 +10,4 @@ Resources:
 2. https://caffe2.ai/docs/tutorial-models-and-datasets.html
 3. https://kezunlin.me/post/9054e84f/
 4. https://kezunlin.me/post/9054e84f/
+5. https://www.pyimagesearch.com/2017/11/06/deep-learning-opencvs-blobfromimage-works/
