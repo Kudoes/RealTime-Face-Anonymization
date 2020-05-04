@@ -4,7 +4,7 @@ from dnn_face_detector import DNN_Face_Detector as dnn_detector
 
 
 # Set the required tolerance (confidence cut-off to display a face)
-TOLERANCE = 0.5
+TOLERANCE = 0.45
 
 # Select what to do with detected faces
 # 'd' =  draw rectangle; 'b' = Gaussian blur the face; 'p' = pixellate the face
@@ -12,15 +12,15 @@ DETECTION = "p"
 
 # Set to True if input is video
 # Set to False if input is just a single picture
-SRC = False
+SRC = True
 
 # Set to 0 if using webcam/live video, or provide input AVI file if using a video
 # Also set the filename of the saved output video
-VIDEO_INPUT = 0
-OUTPUT_FILE_NAME = "detection_output_video.avi"
+VIDEO_INPUT = 0  # "resources/videos/shortclip.mp4"  # 0
+OUTPUT_FILE_NAME = "webcam.avi"
 
 # If the input is just a single picture, set parameters here
-SRC_PIC = "resources/stockphotopeople.jpg"
+SRC_PIC = "resources/test_faces_blank.jpg"
 RES_NAME = "misc/test_faces_pixellated.jpg"
 
 

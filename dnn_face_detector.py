@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import download_pb_file as download_config
 
-
+# DNN Face Detector Class
 class DNN_Face_Detector:
     def __init__(self, tolerance=0.5, handle_detection="d"):
         # The deep network
