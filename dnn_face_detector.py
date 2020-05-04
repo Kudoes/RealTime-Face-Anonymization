@@ -35,7 +35,7 @@ class DNN_Face_Detector:
             # If successfully downloaded initialization file, load pre-trained model
             if res:
                 PB_FILE = "model_config/opencv_face_detector_uint8.pb"
-                PB_TEXT_FILE = "model_config\opencv_face_detector.pbtxt"
+                PB_TEXT_FILE = "model_config/opencv_face_detector.pbtxt"
                 self.NET = cv2.dnn.readNetFromTensorflow(PB_FILE, PB_TEXT_FILE)
             else:
                 print("Unable to download initialization file. Exiting...")
@@ -54,6 +54,7 @@ class DNN_Face_Detector:
                 sys.exit(1)
         except Exception as e:
             print("Invalid parameters. Please provide valid inputs.")
+            print(e)
             sys.exit(1)
 
     # Detect faces in a frame and draw a box around it
