@@ -47,9 +47,9 @@ class DNN_Face_Detector:
                 )
                 sys.exit(1)
 
-            if self.HANDLE_DETECTION not in ["d", "b"]:
+            if self.HANDLE_DETECTION not in ["d", "b", "p"]:
                 print(
-                    "Incorrect HANDLE_DETECTION. Please ensure HANDLE_DETECTION is either 'b' (blur) or 'd' (detect)."
+                    "Incorrect HANDLE_DETECTION. Please ensure HANDLE_DETECTION is one of: 'd' (detect), 'b' (blur) or 'p' (pixellate)."
                 )
                 sys.exit(1)
         except Exception as e:
@@ -106,6 +106,8 @@ class DNN_Face_Detector:
                     draw_rectangle(frame, confidence, x1, y1, x2, y2)
                 elif self.HANDLE_DETECTION == "b":
                     blur_face(frame, x1, y1, x2, y2)
+                elif self.HANDLE_DETECTION == "p":
+                    pixellate_face(frame, x1, y1, x2, y2)
 
         # Return modified frame with detected faces
         return frame
@@ -113,14 +115,30 @@ class DNN_Face_Detector:
 
 # Gaussian blur the detected face
 def blur_face(frame, x1, y1, x2, y2):
+    w, h = frame[y1:y2, x1:x2].shape[:2]
+    w2, h2 = 10, 10
 
-    # Extract the region of the image that contains the face
-    face_image = frame[y1:y2, x1:x2]
-
-    # Blur the face image
-    face_image = cv2.GaussianBlur(face_image, (99, 99), 30)
+    # Blur the region of the image that contains the face
+    face_image = cv2.GaussianBlur(frame[y1:y2, x1:x2], (99, 99), 30)
 
     # Put the blurred face region back into the frame image
+    frame[y1:y2, x1:x2] = face_image
+
+    return frame
+
+
+# Pixellate the detected face by shrinking the image and then re-sizing it back to original dimensions
+def pixellate_face(frame, x1, y1, x2, y2):
+    w, h = frame[y1:y2, x1:x2].shape[:2]
+    w2, h2 = 10, 10
+
+    # Shrink the image to above dimensions
+    temp = cv2.resize(frame[y1:y2, x1:x2], (h2, w2), interpolation=cv2.INTER_LINEAR)
+
+    # Re-size the image with nearest-neighbor interpolation
+    face_image = cv2.resize(temp, (h, w), interpolation=cv2.INTER_NEAREST)
+
+    # Put the pixellated face region back into the frame image
     frame[y1:y2, x1:x2] = face_image
 
     return frame
