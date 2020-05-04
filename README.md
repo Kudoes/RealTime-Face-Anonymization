@@ -24,6 +24,12 @@ A stock photo with five people was one of the tests used to determine the accura
 <img src="https://github.com/Kudoes/RealTime-Face-Blurring/blob/master/misc/test_faces_blurred.jpg" width="500">
 </p>
 
+## Faces Pixellated
+
+<p align="center">
+<img src="https://github.com/Kudoes/RealTime-Face-Blurring/blob/master/misc/test_faces_pixellated.jpg" width="500">
+</p>
+
 
 
 ----------------------------------------------------------------------------------
