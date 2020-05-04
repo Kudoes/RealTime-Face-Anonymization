@@ -145,7 +145,7 @@ def pixellate_face(frame, x1, y1, x2, y2):
 
 
 # Draw a rectangle around the face detection and display confidence
-# Utilized explanation found on: https://www.geeksforgeeks.org/python-opencv-cv2-puttext-method/
+# Utilization explanation found on: https://www.geeksforgeeks.org/python-opencv-cv2-puttext-method/
 def draw_rectangle(frame, confidence, x1, y1, x2, y2):
 
     # Draw rectangle around the face co-ordinates
