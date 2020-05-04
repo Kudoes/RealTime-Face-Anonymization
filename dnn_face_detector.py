@@ -131,15 +131,15 @@ def blur_face(frame, x1, y1, x2, y2):
 def draw_rectangle(frame, confidence, x1, y1, x2, y2):
 
     # Draw rectangle around the face co-ordinates
-    cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 0, 255), 2)
-
+    cv2.rectangle(frame, (x1, y1), (x2, y2), (255, 0, 0), 2)
+    y = y1 - 10 if y1 - 10 > 10 else y1 + 10
     cv2.putText(
         frame,  # Put the text on the given frame
         "conf: {}%".format(round(confidence * 100), 1),
-        (x1, y1 + 10),  # Display confidence above box
+        (x1, y1 - 10),  # Display confidence above box
         cv2.FONT_HERSHEY_SIMPLEX,  # Font is this
         0.45,  # Scale of font
-        (0, 0, 255),  # Color = red
+        (255, 0, 0),  # Color = red
         1,  # Line thickness of 1
     )
 

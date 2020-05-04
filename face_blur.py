@@ -1,17 +1,6 @@
 import cv2
-
-# import sys
-# import matplotlib.pyplot as plt
-
-# # from mtcnn import MTCNN
-import cv2
 import sys
 from dnn_face_detector import DNN_Face_Detector as dnn_detector
-
-# import matplotlib.pyplot as plt
-
-# # import face_recognition
-# import numpy as np
 
 
 # Set the required tolerance and detection result (blur/rectangle)
@@ -22,8 +11,13 @@ DETECTION = "d"
 VIDEO_INPUT = 0
 OUTPUT_FILE_NAME = "detection_output_video.avi"
 
+SRC = False
+SRC_PIC = "resources/stockphotopeople.jpg"
+RES_NAME = "test_faces_detected.jpg"
+
 
 def main():
+    global SRC
 
     print("===== Starting Network Configuration =====")
 
@@ -37,7 +31,7 @@ def main():
     print("===== Starting Face Detection =====")
 
     frame_number = 0
-    while True:
+    while SRC:
 
         # Read next frame
         ret, frame = input_src.read()
@@ -58,14 +52,34 @@ def main():
         print("Writing frame {} / {}".format(frame_number, length))
 
         # Convert the frame back to BGR
-        rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+        rgb_frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
 
         # Write the frame to the output file and also display in monitoring window
         output_file.write(rgb_frame)
         cv2.imshow("Output Video (Press 'q' to exit program)", rgb_frame)
 
         if cv2.waitKey(1) & 0xFF == ord("q"):
-            break
+            SRC = False
+
+    else:
+        frame = cv2.imread(SRC_PIC)
+        frame_number += 1
+
+        # Convert frame to RGB from BGR (necessary for pre-processing for the network)
+        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+
+        # Detect faces in the current frame
+        detector.detect_faces(frame)
+
+        # Write to console the current frame being processed
+        print("Writing frame {} / {}".format(frame_number, length))
+
+        # Convert the frame back to BGR
+        rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+
+        # Write the frame to the output file and also display in monitoring window
+        cv2.imwrite(RES_NAME, rgb_frame)
+        # cv2.imshow("Output Video (Press 'q' to exit program)", rgb_frame)
 
     input_src.release()
     output_file.release()
