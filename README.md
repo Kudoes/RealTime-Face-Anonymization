@@ -7,13 +7,17 @@ Final Project for CS 445 @ UIUC.
 
 # Requirements:
 
-1. This program was tested on both Windows 10 and MacOS. It has not been tested on Unix systems, but that is not to say that it does not work. 
+1. This program was tested on both Windows 10 and MacOS. It has not been tested on Unix systems, but that is not to say that it does not work on them.
 
 2. Python 3.7
 
 # Installation Procedure:
 
-1. `pip install -r requirements.txt`
+1. Clone this repo
+
+2. Run `pip install -r requirements.txt`
+
+    a. Ideally, you should do this in a fresh virtual environment.
 
 # Run the Program
 
@@ -54,7 +58,7 @@ To run the program, simply navigate into `face_blur.py` and adjust the parameter
     b. When output is a picture, specify the output file with a graphical extension (.jpg, .png, etc.).
 
 # Results: Pictures
-A stock photo with five people was one of the tests used to determine the accuracy of the face detection done by the DNN. The results of (1) detection and (2) blurring are shown below.
+A stock photo with five people was one of the tests used to determine the accuracy of the face detection done by the DNN. The results of (1) detection, (2) blurring, and (3) pixelization are shown below.
 
 ## Original Picture
 
@@ -74,7 +78,7 @@ A stock photo with five people was one of the tests used to determine the accura
 <img src="https://github.com/Kudoes/RealTime-Face-Blurring/blob/master/misc/test_faces_blurred.jpg" width="500">
 </p>
 
-## Faces Pixellated
+## Faces Pixelated
 
 <p align="center">
 <img src="https://github.com/Kudoes/RealTime-Face-Blurring/blob/master/misc/test_faces_pixellated.jpg" width="500">
