@@ -21,7 +21,7 @@ Final Project for CS 445 @ UIUC.
 
 # Run the Program
 
-To run the program, simply navigate into `face_blur.py` and adjust the parameters defined at the top of the file.
+To run the program, simply navigate into `face_blur.py` and adjust the parameters defined at the top of the file, and run `python face_blur.py`. The parameters:
 
 1. **TOLERANCE**: The level of tolerance at which faces will be detected (between 0 and 1). 
 
@@ -57,7 +57,7 @@ To run the program, simply navigate into `face_blur.py` and adjust the parameter
     
     b. When output is a picture, specify the output file with a graphical extension (.jpg, .png, etc.).
 
-# Results: Pictures
+# Example Results: Pictures
 A stock photo with five people was one of the tests used to determine the accuracy of the face detection done by the DNN. The results of (1) detection, (2) blurring, and (3) pixelization are shown below.
 
 ## Original Picture
@@ -84,6 +84,10 @@ A stock photo with five people was one of the tests used to determine the accura
 <img src="https://github.com/Kudoes/RealTime-Face-Blurring/blob/master/misc/test_faces_pixellated.jpg" width="500">
 </p>
 
+# Video Results:
+
+Youtube Link: [Real-time Face Detection and Anonymization Results](https://www.youtube.com/watch?v=bKoHkIEWQRk)
+
 
 
 ----------------------------------------------------------------------------------
@@ -95,3 +99,9 @@ Resources:
 4. https://kezunlin.me/post/9054e84f/
 5. https://www.pyimagesearch.com/2017/11/06/deep-learning-opencvs-blobfromimage-works/
 6. https://www.geeksforgeeks.org/python-opencv-cv2-puttext-method/
+
+The videos utilized in the results:
+
+1. [What Makes Carmelo Anthony So Good? - New York Knicks](https://www.youtube.com/watch?v=aSmNgxOZfTs)
+
+2. [Kawhi Leonard, Kyle Lowry talk Raptors’ rollercoaster season - ESPN](https://www.youtube.com/watch?v=sm2e4NT1yho&t=51s)
