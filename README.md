@@ -7,7 +7,7 @@ Final Project for CS 445 @ UIUC.
 
 # Requirements:
 
-1. This program was tested on both Windows 10 and MacOS. It has not been tested on Unix systems, but that is not to say that it does not work on them.
+1. This program was tested on both Windows 10 and MacOS. It has not been tested on Linux OS, but that is not to say that it does not work on them.
 
 2. Python 3.7
 
