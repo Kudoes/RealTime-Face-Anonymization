@@ -1,7 +1,19 @@
 # Real-Time Face Detection and Blurring
-This program utilizes OpenCV's DNN to detect faces in real-time and then anonymize them by either Gaussian blurring or pixelation.
+This program utilizes OpenCV's DNN to detect faces in (1) photos, (2) video files and/or (3) real-time video input and then anonymize them by either Gaussian blurring or pixelation.
 
 Final Project for CS 445 @ UIUC.
+
+# Repository Contents
+
+The contents of this repository are as follows:
+
+1. **misc/**: Miscellaneous files for GitHub display purposes.
+2. **model_config/**: The configuration files for the DNN (such as the weights file).
+3. **resources/**: Folder to place any resources used as input.
+4. **dnn_face_detector.py**: The DNN class which is utilized to detect faces in a given frame.
+5. **face_blur.py**: The main program that will be run to do the detection and anonymization. Parameters/input can be tuned here.
+6. **download_pb_file.py**: A program that will download the model weights file needed to initialize the neural network.
+7. **requirements.txt**: A requirements file that will download all the dependencies.
 
 # Installation
 
