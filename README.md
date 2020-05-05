@@ -19,7 +19,7 @@ The contents of this repository are as follows:
 
 ## Requirements:
 
-1. This program was tested on both Windows 10 and MacOS. It has not been tested on Linux OS, but that is not to say that it does not work on them.
+1. This program was tested on both Windows 10 and MacOS. It has not been tested on Linux, but that is not to say that it will not work on Linux operating systems.
 
 2. Python 3.7
 
