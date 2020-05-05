@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import download_pb_file as download_config
 
-# DNN Face Detector Class
+
 class DNN_Face_Detector:
     def __init__(self, tolerance=0.5, handle_detection="d"):
         # The deep network
@@ -35,7 +35,7 @@ class DNN_Face_Detector:
             # If successfully downloaded initialization file, load pre-trained model
             if res:
                 PB_FILE = "model_config/opencv_face_detector_uint8.pb"
-                PB_TEXT_FILE = "model_config/opencv_face_detector.pbtxt"
+                PB_TEXT_FILE = "model_config\opencv_face_detector.pbtxt"
                 self.NET = cv2.dnn.readNetFromTensorflow(PB_FILE, PB_TEXT_FILE)
             else:
                 print("Unable to download initialization file. Exiting...")
@@ -54,7 +54,6 @@ class DNN_Face_Detector:
                 sys.exit(1)
         except Exception as e:
             print("Invalid parameters. Please provide valid inputs.")
-            print(e)
             sys.exit(1)
 
     # Detect faces in a frame and draw a box around it
@@ -146,7 +145,7 @@ def pixellate_face(frame, x1, y1, x2, y2):
 
 
 # Draw a rectangle around the face detection and display confidence
-# Utilization explanation found on: https://www.geeksforgeeks.org/python-opencv-cv2-puttext-method/
+# Utilized explanation found on: https://www.geeksforgeeks.org/python-opencv-cv2-puttext-method/
 def draw_rectangle(frame, confidence, x1, y1, x2, y2):
 
     # Draw rectangle around the face co-ordinates

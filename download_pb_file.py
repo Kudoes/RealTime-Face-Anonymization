@@ -1,3 +1,5 @@
+# Source Code obtained and modified from: https://github.com/opencv/opencv/blob/master/samples/dnn/face_detector/download_weights.py
+
 from __future__ import print_function
 import hashlib
 import time
